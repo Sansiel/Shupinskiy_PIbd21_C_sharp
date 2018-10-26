@@ -7,28 +7,16 @@ using System.Threading.Tasks;
 
 namespace Windows_forms_plane
 {
-    class Bombardir
+    class Bombardir : vehicle
     {
-        
 
-        /// Левая координата отрисовки автомобиля
-        private float _startPosX;
-        /// Правая кооридната отрисовки автомобиля
-        private float _startPosY;
-        /// Ширина окна отрисовки
-        private int _pictureWidth;
-        //Высота окна отрисовки
-        private int _pictureHeight;
+
+
+        protected const int carWidth = 100;
         /// Ширина отрисовки автомобиля
-        private const int carWidth = 100;
-        /// Ширина отрисовки автомобиля
-        private const int carHeight = 60;
+        protected const int carHeight = 60;
         /// Максимальная скорость
-        public int MaxSpeed { private set; get; }
-        /// Вес автомобиля
-        public float Weight { private set; get; }
-        /// Основной цвет кузова
-        public Color MainColor { private set; get; }
+
         /// Дополнительный цвет
         public Color DopColor { private set; get; }
         /// Признак наличия переднего спойлера
@@ -56,23 +44,25 @@ namespace Windows_forms_plane
             SideSpoiler = sideSpoiler;
             BackSpoiler = backSpoiler;
         }
+
+        public Bombardir(int maxSpeed, float weight, Color mainColor)
+        {
+            MaxSpeed = maxSpeed;
+            Weight = weight;
+            MainColor = mainColor;
+        }
+
         /// Установка позиции автомобиля
         /// <param name="x">Координата X</param>
         /// <param name="y">Координата Y</param>
         /// <param name="width">Ширина картинки</param>
         /// <param name="height">Высота картинки</param>
-        public void SetPosition(int x, int y, int width, int height)
-        {
-            _startPosX = x;
-            _startPosY = y;
-            _pictureWidth = width;
-            _pictureHeight = height;
-        }
+
         /// <summary>
         /// Изменение направления пермещения
         /// </summary>
         /// <param name="direction">Направление</param>
-        public void MoveTransport(Direction direction)
+        public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
@@ -93,7 +83,7 @@ namespace Windows_forms_plane
                     break;
                 //вверх
                 case Direction.Up:
-                    if (_startPosY - step > 0)
+                    if (_startPosY - step > 0 + carHeight)
                     {
                         _startPosY -= step;
                     }
@@ -105,11 +95,11 @@ namespace Windows_forms_plane
                         _startPosY += step;
                     }
                     break;
-                
+                    //Диагонально вниз и направо
             }
         }
         /// <param name="g"></param>
-        public void DrawCar(Graphics g)
+        public override void DrawCar(Graphics g)
         {
             Brush br = new SolidBrush(MainColor);
 
@@ -121,4 +111,5 @@ namespace Windows_forms_plane
         }
     }
 }
+
 

@@ -13,7 +13,8 @@ namespace Windows_forms_plane
 {
     public partial class FormPlane : Form
     {
-        private Bombardir car;
+        private ITransport car;
+
         public FormPlane()
         {
             InitializeComponent();
@@ -25,15 +26,17 @@ namespace Windows_forms_plane
             car.DrawCar(gr);
             pictureBoxPlanes.Image = bmp;
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            car = new Bombardir(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue,
-           Color.Yellow, true, true, true);
+            car = new Bombardir(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
             car.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
            pictureBoxPlanes.Height);
-            Draw();
+            Draw();
         }
+
+
         private void buttonMove_Click(object sender, EventArgs e)
         {
             //получаем имя кнопки
@@ -54,6 +57,15 @@ namespace Windows_forms_plane
                     break;
             }
             Draw();
-        }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            car = new fighter(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true);
+            car.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
+           pictureBoxPlanes.Height);
+            Draw();
+        }
     }
 }
