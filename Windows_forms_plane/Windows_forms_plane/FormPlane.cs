@@ -13,7 +13,8 @@ namespace Windows_forms_plane
 {
     public partial class FormPlane : Form
     {
-        private Bombardir car;
+        private Bombardir car;
+
         public FormPlane()
         {
             InitializeComponent();
@@ -32,7 +33,8 @@ namespace Windows_forms_plane
            Color.Yellow, true, true, true);
             car.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
            pictureBoxPlanes.Height);
-            Draw();
+            Draw();
+
         }
         private void buttonMove_Click(object sender, EventArgs e)
         {
@@ -54,6 +56,7 @@ namespace Windows_forms_plane
                     break;
             }
             Draw();
-        }
+        }
+
     }
 }
