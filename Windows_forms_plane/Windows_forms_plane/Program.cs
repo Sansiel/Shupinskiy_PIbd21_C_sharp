@@ -13,7 +13,7 @@ namespace Windows_forms_plane
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPlane());
+            Application.Run(new FormParking());
         }
     }
 }
