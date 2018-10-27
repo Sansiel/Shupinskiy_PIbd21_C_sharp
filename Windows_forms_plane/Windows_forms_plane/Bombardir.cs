@@ -32,29 +32,18 @@ namespace Windows_forms_plane
         /// Дополнительный цвет
         public Color DopColor { private set; get; }
         /// Признак наличия переднего спойлера
-        public bool FrontSpoiler { private set; get; }
+        public bool BOMBA { private set; get; }
         /// Признак наличия боковых спойлеров
-        public bool SideSpoiler { private set; get; }
-        /// Признак наличия заднего спойлера
-        public bool BackSpoiler { private set; get; }
-        /// Конструктор
-        /// <param name="maxSpeed">Максимальная скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
-        /// <param name="mainColor">Основной цвет кузова</param>
-        /// <param name="dopColor">Дополнительный цвет</param>
-        /// <param name="frontSpoiler">Признак наличия переднего спойлера</param>
-        /// <param name="sideSpoiler">Признак наличия боковых спойлеров</param>
-        /// <param name="backSpoiler">Признак наличия заднего спойлера</param>
+        public bool ARMOUR { private set; get; }
         public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
-       frontSpoiler, bool sideSpoiler, bool backSpoiler)
+       bomba, bool armour)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
             DopColor = dopColor;
-            FrontSpoiler = frontSpoiler;
-            SideSpoiler = sideSpoiler;
-            BackSpoiler = backSpoiler;
+            BOMBA = bomba;
+            ARMOUR = armour;
         }
         /// Установка позиции автомобиля
         /// <param name="x">Координата X</param>

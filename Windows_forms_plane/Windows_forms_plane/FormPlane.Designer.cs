@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlane));
             this.pictureBoxPlanes = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
@@ -47,15 +47,15 @@
             this.pictureBoxPlanes.TabIndex = 0;
             this.pictureBoxPlanes.TabStop = false;
             // 
-            // button1
+            // buttonCreate
             // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 33);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Создать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCreate.Location = new System.Drawing.Point(12, 12);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(69, 33);
+            this.buttonCreate.TabIndex = 1;
+            this.buttonCreate.Text = "Создать";
+            this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonLeft
             // 
@@ -114,7 +114,7 @@
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxPlanes);
             this.Name = "FormPlane";
             this.Text = "Form1";
@@ -126,7 +126,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxPlanes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCreate;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonUp;
