@@ -48,10 +48,10 @@
         this.pictureBoxPlanes.TabIndex = 0;
         this.pictureBoxPlanes.TabStop = false;
         // 
-        // button1
+        // buttonCreateBombardir
         // 
         this.button1.Location = new System.Drawing.Point(12, 12);
-        this.button1.Name = "button1";
+        this.button1.Name = "buttonCreateBombardir";
         this.button1.Size = new System.Drawing.Size(85, 33);
         this.button1.TabIndex = 1;
         this.button1.Text = "Создать";
@@ -106,10 +106,10 @@
         this.buttonDown.UseVisualStyleBackColor = true;
         this.buttonDown.Click += new System.EventHandler(this.buttonMove_Click);
         // 
-        // button3
+        // buttonSteal
         // 
         this.button3.Location = new System.Drawing.Point(103, 12);
-        this.button3.Name = "button3";
+        this.button3.Name = "buttonSteal";
         this.button3.Size = new System.Drawing.Size(99, 33);
         this.button3.TabIndex = 7;
         this.button3.Text = "Upgrate";
