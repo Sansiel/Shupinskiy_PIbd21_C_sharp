@@ -25,14 +25,14 @@ namespace Windows_forms_plane
         public bool ARMOUR { private set; get; }
 
         public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
-       frontSpoiler, bool bomba, bool armour)
+       bomba, bool armour)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
             DopColor = dopColor;
-            BOMBA = frontSpoiler;
-            ARMOUR = bomba;
+            BOMBA = bomba;
+            ARMOUR = armour;
         }
 
         public Bombardir(int maxSpeed, float weight, Color mainColor)
