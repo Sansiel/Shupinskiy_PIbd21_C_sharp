@@ -27,7 +27,7 @@ namespace Windows_forms_plane
             pictureBoxPlanes.Image = bmp;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             car = new Bombardir(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue);
@@ -59,7 +59,7 @@ namespace Windows_forms_plane
             Draw();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonUpgrate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             car = new fighter(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true);

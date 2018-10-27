@@ -13,7 +13,7 @@ namespace Windows_forms_plane
         public Color DopColor { private set; get; }
         public bool ShoutGun { private set; get; }
 
-        public fighter(int maxSpeed, float weight, Color mainColor, Color dopColor, bool shoutgun, bool sideSpoiler, bool backSpoiler) : base(maxSpeed, weight, mainColor)
+        public fighter(int maxSpeed, float weight, Color mainColor, Color dopColor, bool shoutgun, bool bomba, bool armour) : base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
             ShoutGun = shoutgun;

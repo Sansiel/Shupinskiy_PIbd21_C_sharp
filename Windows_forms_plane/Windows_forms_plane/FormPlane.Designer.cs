@@ -30,12 +30,12 @@
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlane));
         this.pictureBoxPlanes = new System.Windows.Forms.PictureBox();
-        this.button1 = new System.Windows.Forms.Button();
+        this.buttonCreate = new System.Windows.Forms.Button();
         this.buttonLeft = new System.Windows.Forms.Button();
         this.buttonRight = new System.Windows.Forms.Button();
         this.buttonUp = new System.Windows.Forms.Button();
         this.buttonDown = new System.Windows.Forms.Button();
-        this.button3 = new System.Windows.Forms.Button();
+        this.buttonUpgrate = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlanes)).BeginInit();
         this.SuspendLayout();
         // 
@@ -50,13 +50,13 @@
         // 
         // buttonCreateBombardir
         // 
-        this.button1.Location = new System.Drawing.Point(12, 12);
-        this.button1.Name = "buttonCreateBombardir";
-        this.button1.Size = new System.Drawing.Size(85, 33);
-        this.button1.TabIndex = 1;
-        this.button1.Text = "Создать";
-        this.button1.UseVisualStyleBackColor = true;
-        this.button1.Click += new System.EventHandler(this.button1_Click);
+        this.buttonCreate.Location = new System.Drawing.Point(12, 12);
+        this.buttonCreate.Name = "buttonCreateBombardir";
+        this.buttonCreate.Size = new System.Drawing.Size(85, 33);
+        this.buttonCreate.TabIndex = 1;
+        this.buttonCreate.Text = "Создать";
+        this.buttonCreate.UseVisualStyleBackColor = true;
+        this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
         // 
         // buttonLeft
         // 
@@ -108,25 +108,25 @@
         // 
         // buttonSteal
         // 
-        this.button3.Location = new System.Drawing.Point(103, 12);
-        this.button3.Name = "buttonSteal";
-        this.button3.Size = new System.Drawing.Size(99, 33);
-        this.button3.TabIndex = 7;
-        this.button3.Text = "Upgrate";
-        this.button3.UseVisualStyleBackColor = true;
-        this.button3.Click += new System.EventHandler(this.button3_Click);
+        this.buttonUpgrate.Location = new System.Drawing.Point(103, 12);
+        this.buttonUpgrate.Name = "buttonSteal";
+        this.buttonUpgrate.Size = new System.Drawing.Size(99, 33);
+        this.buttonUpgrate.TabIndex = 7;
+        this.buttonUpgrate.Text = "Upgrate";
+        this.buttonUpgrate.UseVisualStyleBackColor = true;
+        this.buttonUpgrate.Click += new System.EventHandler(this.buttonUpgrate_Click);
         // 
         // FormPlane
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(1311, 501);
-        this.Controls.Add(this.button3);
+        this.Controls.Add(this.buttonUpgrate);
         this.Controls.Add(this.buttonDown);
         this.Controls.Add(this.buttonUp);
         this.Controls.Add(this.buttonRight);
         this.Controls.Add(this.buttonLeft);
-        this.Controls.Add(this.button1);
+        this.Controls.Add(this.buttonCreate);
         this.Controls.Add(this.pictureBoxPlanes);
         this.Name = "FormPlane";
         this.Text = "Form1";
@@ -138,12 +138,12 @@
     #endregion
 
     private System.Windows.Forms.PictureBox pictureBoxPlanes;
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button buttonCreate;
     private System.Windows.Forms.Button buttonLeft;
     private System.Windows.Forms.Button buttonRight;
     private System.Windows.Forms.Button buttonUp;
     private System.Windows.Forms.Button buttonDown;
-    private System.Windows.Forms.Button button3;
+    private System.Windows.Forms.Button buttonUpgrate;
 }
 }
 
