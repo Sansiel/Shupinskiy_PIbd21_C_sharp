@@ -17,19 +17,19 @@ namespace Windows_forms_plane
         public FormParking()
         {
             InitializeComponent();
-            parking = new Parking<ITransport>(5, pictureBox1.Width, pictureBox1.Height);
+            parking = new Parking<ITransport>(5, pictureBoxField.Width, pictureBoxField.Height);
             Draw();
         }
         private void Draw()
         {
-            Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Bitmap bmp = new Bitmap(pictureBoxField.Width, pictureBoxField.Height);
             Graphics gr = Graphics.FromImage(bmp);
             parking.Draw(gr);
-            pictureBox1.Image = bmp;
+            pictureBoxField.Image = bmp;
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCreate_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -41,7 +41,7 @@ namespace Windows_forms_plane
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonUpgrate_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -56,22 +56,22 @@ namespace Windows_forms_plane
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonSteal_Click(object sender, EventArgs e)
         {
-            var car = parking - Convert.ToInt32(maskedTextBox1.Text);
+            var car = parking - Convert.ToInt32(maskedTextBoxNumber.Text);
             if (car != null)
             {
-                Bitmap bmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+                Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                car.SetPosition(5, 30, pictureBox2.Width, pictureBox2.Height);
+                car.SetPosition(5, 30, pictureBoxParking.Width, pictureBoxParking.Height);
                 car.DrawCar(gr);
-                pictureBox2.Image = bmp;
+                pictureBoxParking.Image = bmp;
             }
             else
             {
-                Bitmap bmp = new Bitmap(pictureBox2.Width,
-               pictureBox2.Height);
-                pictureBox2.Image = bmp;
+                Bitmap bmp = new Bitmap(pictureBoxParking.Width,
+               pictureBoxParking.Height);
+                pictureBoxParking.Image = bmp;
             }
             Draw();
         }
