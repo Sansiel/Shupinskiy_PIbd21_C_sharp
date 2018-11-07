@@ -13,7 +13,7 @@ namespace Windows_forms_plane
 {
     public partial class FormPlane : Form
     {
-        private Bombardir car;
+        private Bombardir plane;
 
         public FormPlane()
         {
@@ -23,14 +23,14 @@ namespace Windows_forms_plane
         {
             Bitmap bmp = new Bitmap(pictureBoxPlanes.Width, pictureBoxPlanes.Height);
             Graphics gr = Graphics.FromImage(bmp);
-            car.DrawCar(gr);
+            plane.DrawPlane(gr);
             pictureBoxPlanes.Image = bmp;
         }
         private void buttonCreate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            car = new Bombardir(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
-            car.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
+            plane = new Bombardir(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Yellow, true, true);
+            plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
            pictureBoxPlanes.Height);
             Draw();
 
@@ -42,16 +42,16 @@ namespace Windows_forms_plane
             switch (name)
             {
                 case "buttonUp":
-                    car.MoveTransport(Direction.Up);
+                    plane.MoveTransport(Direction.Up);
                     break;
                 case "buttonDown":
-                    car.MoveTransport(Direction.Down);
+                    plane.MoveTransport(Direction.Down);
                     break;
                 case "buttonLeft":
-                    car.MoveTransport(Direction.Left);
+                    plane.MoveTransport(Direction.Left);
                     break;
                 case "buttonRight":
-                    car.MoveTransport(Direction.Right);
+                    plane.MoveTransport(Direction.Right);
                     break;
             }
             Draw();

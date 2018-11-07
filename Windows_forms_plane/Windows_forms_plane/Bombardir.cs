@@ -35,10 +35,7 @@ namespace Windows_forms_plane
         public bool BOMBA { private set; get; }
         /// Признак наличия боковых спойлеров
         public bool ARMOUR { private set; get; }
-        /// Признак наличия заднего спойлера
-        public bool BackSpoiler { private set; get; }
-        public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
-       bomba, bool armour)
+        public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool bomba, bool armour)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -100,7 +97,7 @@ namespace Windows_forms_plane
             }
         }
         /// <param name="g"></param>
-        public void DrawCar(Graphics g)
+        public void DrawPlane(Graphics g)
         {
             Brush br = new SolidBrush(MainColor);
 
