@@ -42,7 +42,7 @@ namespace Windows_forms_plane
             _pictureWidth = width;
             _pictureHeight = height;
         }
-        public abstract void DrawCar(Graphics g);
+        public abstract void DrawPlane(Graphics g);
         public abstract void MoveTransport(Direction direction);
     }
 }

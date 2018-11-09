@@ -51,13 +51,13 @@ namespace Windows_forms_plane
         /// <param name="p">Парковка</param>
         /// <param name="car">Добавляемый автомобиль</param>
         /// <returns></returns>
-        public static int operator +(Parking<T> p, T car)
+        public static int operator +(Parking<T> p, T plane)
         {
             for (int i = 0; i < p._places.Length; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p._places[i] = car;
+                    p._places[i] = plane;
                     p._places[i].SetPosition(5 + i / 5 * p._placeSizeWidth + 5, i % 5 * p._placeSizeHeight + 25, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
@@ -79,9 +79,9 @@ namespace Windows_forms_plane
             }
             if (!p.CheckFreePlace(index))
             {
-                T car = p._places[index];
+                T plane = p._places[index];
                 p._places[index] = null;
-                return car;
+                return plane;
             }
             return null;
         }
@@ -105,7 +105,7 @@ namespace Windows_forms_plane
             {
                 if (!CheckFreePlace(i))
                 {//если место не пустое
-                    _places[i].DrawCar(g);
+                    _places[i].DrawPlane(g);
                 }
             }
         }

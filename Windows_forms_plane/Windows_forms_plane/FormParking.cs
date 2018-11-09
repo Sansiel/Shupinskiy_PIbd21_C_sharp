@@ -34,8 +34,8 @@ namespace Windows_forms_plane
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                var car = new Bombardir(100, 1000, dialog.Color);
-                int place = parking + car;
+                var plane = new Bombardir(100, 1000, dialog.Color);
+                int place = parking + plane;
                 Draw();
             }
 
@@ -49,8 +49,8 @@ namespace Windows_forms_plane
                 ColorDialog dialogDop = new ColorDialog();
                 if (dialogDop.ShowDialog() == DialogResult.OK)
                 {
-                    var car = new fighter(100, 1000, dialog.Color, dialogDop.Color, true, true, true);
-                    int place = parking + car;
+                    var plane = new fighter(100, 1000, dialog.Color, dialogDop.Color, true, true, true);
+                    int place = parking + plane;
                     Draw();
                 }
             }
@@ -58,13 +58,13 @@ namespace Windows_forms_plane
 
         private void buttonSteal_Click(object sender, EventArgs e)
         {
-            var car = parking - Convert.ToInt32(maskedTextBoxNumber.Text);
-            if (car != null)
+            var plane = parking - Convert.ToInt32(maskedTextBoxNumber.Text);
+            if (plane != null)
             {
                 Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                car.SetPosition(5, 30, pictureBoxParking.Width, pictureBoxParking.Height);
-                car.DrawCar(gr);
+                plane.SetPosition(5, 30, pictureBoxParking.Width, pictureBoxParking.Height);
+                plane.DrawPlane(gr);
                 pictureBoxParking.Image = bmp;
             }
             else
