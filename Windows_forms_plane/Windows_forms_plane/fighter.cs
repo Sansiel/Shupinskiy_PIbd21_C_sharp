@@ -20,7 +20,7 @@ namespace Windows_forms_plane
 
         }
 
-        public override void DrawCar(Graphics g)
+        public override void DrawPlane(Graphics g)
         {
 
             Brush bru = new SolidBrush(DopColor);
@@ -36,7 +36,7 @@ namespace Windows_forms_plane
 
             }
 
-            base.DrawCar(g);
+            base.DrawPlane(g);
 
         }
     }

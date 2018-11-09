@@ -12,9 +12,9 @@ namespace Windows_forms_plane
 
 
 
-        protected const int carWidth = 100;
+        protected const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
-        protected const int carHeight = 60;
+        protected const int planeHeight = 60;
         /// Максимальная скорость
 
         /// Дополнительный цвет
@@ -59,7 +59,7 @@ namespace Windows_forms_plane
             {
                 // вправо
                 case Direction.Right:
-                    if (_startPosX + step < _pictureWidth - carWidth)
+                    if (_startPosX + step < _pictureWidth - planeWidth)
                     {
                         _startPosX += step;
                     }
@@ -73,14 +73,14 @@ namespace Windows_forms_plane
                     break;
                 //вверх
                 case Direction.Up:
-                    if (_startPosY - step > 0 + carHeight)
+                    if (_startPosY - step > 0 + planeHeight)
                     {
                         _startPosY -= step;
                     }
                     break;
                 //вниз
                 case Direction.Down:
-                    if (_startPosY + step < _pictureHeight - carHeight)
+                    if (_startPosY + step < _pictureHeight - planeHeight)
                     {
                         _startPosY += step;
                     }
@@ -89,7 +89,7 @@ namespace Windows_forms_plane
             }
         }
         /// <param name="g"></param>
-        public override void DrawCar(Graphics g)
+        public override void DrawPlane(Graphics g)
         {
             Brush br = new SolidBrush(MainColor);
 
