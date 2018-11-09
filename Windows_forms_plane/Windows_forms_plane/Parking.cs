@@ -38,7 +38,7 @@ namespace Windows_forms_plane
         /// <param name="p">Парковка</param>
         /// <param name="car">Добавляемый автомобиль</param>
         /// <returns></returns>
-        public static int operator +(Parking<T> p, T car)
+        public static int operator +(Parking<T> p, T plane)
         {
             if (p._places.Count == p._maxCount)
             {
@@ -48,7 +48,7 @@ namespace Windows_forms_plane
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p._places.Add(i, car);
+                    p._places.Add(i, plane);
                     p._places[i].SetPosition(5 + i / 5 * p._placeSizeWidth + 5, i % 5 * p._placeSizeHeight + 25, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
@@ -67,9 +67,9 @@ namespace Windows_forms_plane
         {
             if (!p.CheckFreePlace(index))
             {
-                T car = p._places[index];
+                T plane = p._places[index];
                 p._places.Remove(index);
-                return car;
+                return plane;
             }
             return null;
         }
@@ -93,7 +93,7 @@ namespace Windows_forms_plane
             var keys = _places.Keys.ToList();
             for (int i = 0; i < keys.Count; i++)
             {
-                _places[keys[i]].DrawCar(g);
+                _places[keys[i]].DrawPlane(g);
             }
         }
         /// <summary>

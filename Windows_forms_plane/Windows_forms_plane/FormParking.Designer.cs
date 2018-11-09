@@ -58,7 +58,7 @@
             this.buttonCreateBombardir.TabIndex = 1;
             this.buttonCreateBombardir.Text = "Припарковать маленький бомбардировщик";
             this.buttonCreateBombardir.UseVisualStyleBackColor = true;
-            this.buttonCreateBombardir.Click += new System.EventHandler(this.button1_Click);
+            this.buttonCreateBombardir.Click += new System.EventHandler(this.buttonCreateBombardir_Click);
             // 
             // buttonCreateFighter
             // 
@@ -68,7 +68,7 @@
             this.buttonCreateFighter.TabIndex = 2;
             this.buttonCreateFighter.Text = "Припарковать Истребитель";
             this.buttonCreateFighter.UseVisualStyleBackColor = true;
-            this.buttonCreateFighter.Click += new System.EventHandler(this.button2_Click);
+            this.buttonCreateFighter.Click += new System.EventHandler(this.buttonCreateFighter_Click);
             // 
             // groupBoxNavigation
             // 
@@ -99,7 +99,7 @@
             this.buttonSteal.TabIndex = 2;
             this.buttonSteal.Text = "Угнать";
             this.buttonSteal.UseVisualStyleBackColor = true;
-            this.buttonSteal.Click += new System.EventHandler(this.button3_Click);
+            this.buttonSteal.Click += new System.EventHandler(this.buttonSteal_Click);
             // 
             // maskedTextBoxPlace
             // 
@@ -125,7 +125,7 @@
             this.listBoxMultiParking.Name = "listBoxMultiParking";
             this.listBoxMultiParking.Size = new System.Drawing.Size(123, 100);
             this.listBoxMultiParking.TabIndex = 4;
-            this.listBoxMultiParking.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxMultiParking.SelectedIndexChanged += new System.EventHandler(this.listBoxLevelsChange_SelectedIndexChanged);
             // 
             // FormParking
             // 

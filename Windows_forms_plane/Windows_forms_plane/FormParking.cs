@@ -42,15 +42,15 @@ namespace Windows_forms_plane
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonCreateBombardir_Click(object sender, EventArgs e)
         {
             if (listBoxMultiParking.SelectedIndex > -1)
             {
                 ColorDialog dialog = new ColorDialog();
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    var car = new Bombardir(100, 1000, dialog.Color);
-                    int place = parking[listBoxMultiParking.SelectedIndex] + car;
+                    var plane = new Bombardir(100, 1000, dialog.Color);
+                    int place = parking[listBoxMultiParking.SelectedIndex] + plane;
                     if (place == -1)
                     {
                         MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -62,7 +62,7 @@ namespace Windows_forms_plane
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonCreateFighter_Click(object sender, EventArgs e)
         {
             if (listBoxMultiParking.SelectedIndex > -1)
             {
@@ -72,9 +72,9 @@ namespace Windows_forms_plane
                     ColorDialog dialogDop = new ColorDialog();
                     if (dialogDop.ShowDialog() == DialogResult.OK)
                     {
-                        var car = new fighter(100, 1000, dialog.Color, dialogDop.Color,
+                        var plane = new fighter(100, 1000, dialog.Color, dialogDop.Color,
                        true, true, true);
-                        int place = parking[listBoxMultiParking.SelectedIndex] + car;
+                        int place = parking[listBoxMultiParking.SelectedIndex] + plane;
                         if (place == -1)
                         {
                             MessageBox.Show("Нет свободных мест", "Ошибка",
@@ -87,20 +87,20 @@ namespace Windows_forms_plane
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonSteal_Click(object sender, EventArgs e)
         {
             if (listBoxMultiParking.SelectedIndex > -1)
             {
                 if (maskedTextBoxPlace.Text != "")
                 {
-                    var car = parking[listBoxMultiParking.SelectedIndex] -
+                    var plane = parking[listBoxMultiParking.SelectedIndex] -
                    Convert.ToInt32(maskedTextBoxPlace.Text);
-                    if (car != null)
+                    if (plane != null)
                     {
                         Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
                         Graphics gr = Graphics.FromImage(bmp);
-                        car.SetPosition(5, 30, pictureBoxParking.Width, pictureBoxParking.Height);
-                        car.DrawCar(gr);
+                        plane.SetPosition(5, 30, pictureBoxParking.Width, pictureBoxParking.Height);
+                        plane.DrawPlane(gr);
                         pictureBoxParking.Image = bmp;
                     }
                     else
@@ -113,7 +113,7 @@ namespace Windows_forms_plane
                 }
             }
         }
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxLevelsChange_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
         }
