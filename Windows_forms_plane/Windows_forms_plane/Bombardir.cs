@@ -20,9 +20,9 @@ namespace Windows_forms_plane
         //Высота окна отрисовки
         private int _pictureHeight;
         /// Ширина отрисовки автомобиля
-        private const int carWidth = 100;
+        private const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
-        private const int carHeight = 60;
+        private const int planeHeight = 60;
         /// Максимальная скорость
         public int MaxSpeed { private set; get; }
         /// Вес автомобиля
@@ -67,7 +67,7 @@ namespace Windows_forms_plane
             {
                 // вправо
                 case Direction.Right:
-                    if (_startPosX + step < _pictureWidth - carWidth)
+                    if (_startPosX + step < _pictureWidth - planeWidth)
                     {
                         _startPosX += step;
                     }
@@ -88,7 +88,7 @@ namespace Windows_forms_plane
                     break;
                 //вниз
                 case Direction.Down:
-                    if (_startPosY + step < _pictureHeight - carHeight)
+                    if (_startPosY + step < _pictureHeight - planeHeight)
                     {
                         _startPosY += step;
                     }
