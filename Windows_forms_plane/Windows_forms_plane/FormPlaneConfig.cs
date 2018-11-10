@@ -64,7 +64,7 @@ namespace Windows_forms_plane
             labelFighter.DoDragDrop(labelFighter.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
 
-        private void panelCar_DragEnter(object sender, DragEventArgs e)
+        private void panelBoxPlaneConfig_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
             {
@@ -74,10 +74,12 @@ namespace Windows_forms_plane
             {
                 e.Effect = DragDropEffects.None;
             }
+            
         }
 
         private void panelBoxPlaneConfig_DragDrop(object sender, DragEventArgs e)
         {
+
             switch (e.Data.GetData(DataFormats.Text).ToString())
             {
                 case "Bombardir":
@@ -87,8 +89,14 @@ namespace Windows_forms_plane
                     plane = new fighter(100, 500, Color.White, Color.Black, true, true, true);
                     break;
             }
-            DrawPlane();
+           DrawPlane();
         }
+
+        private ITransport GetData(Type type)
+        {
+            throw new NotImplementedException();
+        }
+
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             (sender as Control).DoDragDrop((sender as Control).BackColor, DragDropEffects.Move | DragDropEffects.Copy);
@@ -116,13 +124,19 @@ namespace Windows_forms_plane
 
         private void labelDopColor_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(typeof(Color)))
+            if (plane != null)
             {
-                e.Effect = DragDropEffects.Copy;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
+                if (plane is fighter)
+                {
+                    if (e.Data.GetDataPresent(typeof(Color)))
+                    {
+                        e.Effect = DragDropEffects.Copy;
+                    }
+                    else
+                    {
+                        e.Effect = DragDropEffects.None;
+                    }
+                }
             }
         }
 

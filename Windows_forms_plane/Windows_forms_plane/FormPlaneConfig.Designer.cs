@@ -106,7 +106,7 @@
             this.panelForPictureBox.Size = new System.Drawing.Size(272, 324);
             this.panelForPictureBox.TabIndex = 2;
             this.panelForPictureBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelBoxPlaneConfig_DragDrop);
-            this.panelForPictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelCar_DragEnter);
+            this.panelForPictureBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelBoxPlaneConfig_DragEnter);
             // 
             // labelDopColor
             // 

@@ -75,10 +75,10 @@ namespace Windows_forms_plane
         private void buttonSetPlane_Click(object sender, EventArgs e)
         {
             form = new FormPlaneConfig();
-            form.AddEvent(AddCar);
+            form.AddEvent(AddPlane);
             form.Show();
         }
-        private void AddCar(ITransport plane)
+        private void AddPlane(ITransport plane)
         {
             if (plane != null && listBoxMultiParking.SelectedIndex > -1)
             {
