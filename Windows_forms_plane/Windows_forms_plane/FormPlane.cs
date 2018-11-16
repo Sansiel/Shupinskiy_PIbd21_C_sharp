@@ -15,6 +15,7 @@ namespace Windows_forms_plane
     {
         private ITransport plane;
 
+
         public FormPlane()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace Windows_forms_plane
             plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
            pictureBoxPlanes.Height);
             Draw();
+
         }
 
 
@@ -59,6 +61,7 @@ namespace Windows_forms_plane
             Draw();
         }
 
+
         private void buttonUpgrate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -67,5 +70,6 @@ namespace Windows_forms_plane
            pictureBoxPlanes.Height);
             Draw();
         }
+
     }
 }
