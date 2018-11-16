@@ -38,6 +38,7 @@
             this.buttonSetPlane = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             this.groupBoxNavigation.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             // 
             this.buttonSteal.Location = new System.Drawing.Point(20, 57);
             this.buttonSteal.Name = "buttonSteal";
+
             this.buttonSteal.Size = new System.Drawing.Size(132, 25);
             this.buttonSteal.TabIndex = 2;
             this.buttonSteal.Text = "Угнать";

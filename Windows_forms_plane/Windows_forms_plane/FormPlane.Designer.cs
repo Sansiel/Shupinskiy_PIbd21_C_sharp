@@ -22,6 +22,7 @@
 
     #region Код, автоматически созданный конструктором форм Windows
 
+
     /// <summary>
     /// Требуемый метод для поддержки конструктора — не изменяйте 
     /// содержимое этого метода с помощью редактора кода.
@@ -137,6 +138,7 @@
 
     #endregion
 
+
     private System.Windows.Forms.PictureBox pictureBoxPlanes;
     private System.Windows.Forms.Button buttonCreate;
     private System.Windows.Forms.Button buttonLeft;
@@ -145,5 +147,6 @@
     private System.Windows.Forms.Button buttonDown;
     private System.Windows.Forms.Button buttonUpgrate;
 }
+
 }
 

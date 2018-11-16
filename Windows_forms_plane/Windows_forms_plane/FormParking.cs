@@ -40,7 +40,6 @@ namespace Windows_forms_plane
                 pictureBoxField.Image = bmp;
             }
         }
-
         private void buttonSteal_Click(object sender, EventArgs e)
         {
             if (listBoxMultiParking.SelectedIndex > -1)
