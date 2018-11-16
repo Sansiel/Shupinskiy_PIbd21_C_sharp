@@ -63,6 +63,7 @@ namespace Windows_forms_plane
         }
 
         private void buttonCreateFighter_Click(object sender, EventArgs e)
+=======
         {
             if (listBoxMultiParking.SelectedIndex > -1)
             {

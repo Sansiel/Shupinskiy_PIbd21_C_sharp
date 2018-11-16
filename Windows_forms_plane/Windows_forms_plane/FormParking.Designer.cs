@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureBoxField = new System.Windows.Forms.PictureBox();
+
             this.buttonCreateBombardir = new System.Windows.Forms.Button();
             this.buttonCreateFighter = new System.Windows.Forms.Button();
             this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,7 @@
             this.listBoxMultiParking = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             this.groupBoxNavigation.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +97,7 @@
             // 
             this.buttonSteal.Location = new System.Drawing.Point(20, 57);
             this.buttonSteal.Name = "buttonSteal";
+
             this.buttonSteal.Size = new System.Drawing.Size(132, 25);
             this.buttonSteal.TabIndex = 2;
             this.buttonSteal.Text = "Угнать";
@@ -136,6 +139,7 @@
             this.Controls.Add(this.groupBoxNavigation);
             this.Controls.Add(this.buttonCreateFighter);
             this.Controls.Add(this.buttonCreateBombardir);
+
             this.Controls.Add(this.pictureBoxField);
             this.Name = "FormParking";
             this.Text = "АНГАРИЩЕ";
@@ -158,5 +162,6 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlace;
         private System.Windows.Forms.Label labelStealing;
         private System.Windows.Forms.ListBox listBoxMultiParking;
+
     }
 }
