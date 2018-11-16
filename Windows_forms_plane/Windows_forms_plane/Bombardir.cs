@@ -16,13 +16,13 @@ namespace Windows_forms_plane
         /// Правая кооридната отрисовки автомобиля
         private float _startPosY;
         /// Ширина окна отрисовки
-        protected int _pictureWidth;
+        private int _pictureWidth;
         //Высота окна отрисовки
-        protected int _pictureHeight;
+        private int _pictureHeight;
         /// Ширина отрисовки автомобиля
-        private const int planeWidth = 100;
+        protected const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
-        private const int planeHeight = 60;
+        protected const int planeHeight = 60;
         /// Максимальная скорость
         public int MaxSpeed { private set; get; }
         /// Вес автомобиля
