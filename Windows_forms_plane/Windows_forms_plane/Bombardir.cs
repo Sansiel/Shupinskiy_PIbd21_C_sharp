@@ -9,7 +9,6 @@ namespace Windows_forms_plane
 {
     class Bombardir : vehicle
     {
-
         protected const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
         protected const int planeHeight = 60;
@@ -21,7 +20,6 @@ namespace Windows_forms_plane
         public bool BOMBA { private set; get; }
         /// Признак наличия боковых спойлеров
         public bool ARMOUR { private set; get; }
-
         public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
        bomba, bool armour)
 
@@ -90,7 +88,6 @@ namespace Windows_forms_plane
         }
         /// <param name="g"></param>
         public override void DrawPlane(Graphics g)
-
         {
             Brush br = new SolidBrush(MainColor);
 
