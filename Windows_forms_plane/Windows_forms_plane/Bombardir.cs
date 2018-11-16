@@ -7,55 +7,60 @@ using System.Threading.Tasks;
 
 namespace Windows_forms_plane
 {
-    class Bombardir : vehicle
+    class Bombardir
     {
 
 
-
-        protected const int planeWidth = 100;
+        /// Левая координата отрисовки автомобиля
+        private float _startPosX;
+        /// Правая кооридната отрисовки автомобиля
+        private float _startPosY;
+        /// Ширина окна отрисовки
+        protected int _pictureWidth;
+        //Высота окна отрисовки
+        protected int _pictureHeight;
         /// Ширина отрисовки автомобиля
-        protected const int planeHeight = 60;
+        private const int planeWidth = 100;
+        /// Ширина отрисовки автомобиля
+        private const int planeHeight = 60;
         /// Максимальная скорость
-
+        public int MaxSpeed { private set; get; }
+        /// Вес автомобиля
+        public float Weight { private set; get; }
+        /// Основной цвет кузова
+        public Color MainColor { private set; get; }
         /// Дополнительный цвет
         public Color DopColor { private set; get; }
         /// Признак наличия переднего спойлера
         public bool BOMBA { private set; get; }
         /// Признак наличия боковых спойлеров
-        public bool SideSpoiler { private set; get; }
-        /// Признак наличия заднего спойлера
-        public bool BackSpoiler { private set; get; }
-        /// Конструктор
-        /// <param name="maxSpeed">Максимальная скорость</param>
-        /// <param name="weight">Вес автомобиля</param>
-        /// <param name="mainColor">Основной цвет кузова</param>
-        /// <param name="dopColor">Дополнительный цвет</param>
-        /// <param name="frontSpoiler">Признак наличия переднего спойлера</param>
-        /// <param name="sideSpoiler">Признак наличия боковых спойлеров</param>
-        /// <param name="backSpoiler">Признак наличия заднего спойлера</param>
-        public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
-       frontSpoiler, bool sideSpoiler, bool backSpoiler)
+        public bool ARMOUR { private set; get; }
+        public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool bomba, bool armour)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
             DopColor = dopColor;
-            FrontSpoiler = frontSpoiler;
-            SideSpoiler = sideSpoiler;
-            BackSpoiler = backSpoiler;
+            BOMBA = bomba;
+            ARMOUR = armour;
         }
-
         /// Установка позиции автомобиля
         /// <param name="x">Координата X</param>
         /// <param name="y">Координата Y</param>
         /// <param name="width">Ширина картинки</param>
         /// <param name="height">Высота картинки</param>
-
+        public void SetPosition(int x, int y, int width, int height)
+        {
+            _startPosX = x;
+            _startPosY = y;
+            _pictureWidth = width;
+            _pictureHeight = height;
+        }
         /// <summary>
         /// Изменение направления пермещения
         /// </summary>
         /// <param name="direction">Направление</param>
-        public override void MoveTransport(Direction direction)
+        public void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
@@ -76,7 +81,7 @@ namespace Windows_forms_plane
                     break;
                 //вверх
                 case Direction.Up:
-                    if (_startPosY - step > 0 + planeHeight)
+                    if (_startPosY - step > 0)
                     {
                         _startPosY -= step;
                     }
@@ -88,11 +93,11 @@ namespace Windows_forms_plane
                         _startPosY += step;
                     }
                     break;
-                    //Диагонально вниз и направо
+
             }
         }
         /// <param name="g"></param>
-        public void DrawCar(Graphics g)
+        public void DrawPlane(Graphics g)
         {
             Brush br = new SolidBrush(MainColor);
 
@@ -104,5 +109,3 @@ namespace Windows_forms_plane
         }
     }
 }
-
-
