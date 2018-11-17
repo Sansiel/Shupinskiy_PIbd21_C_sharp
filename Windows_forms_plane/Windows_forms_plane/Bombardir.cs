@@ -38,7 +38,7 @@ namespace Windows_forms_plane
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
-
+        }
 
 
         /// Установка позиции автомобиля
