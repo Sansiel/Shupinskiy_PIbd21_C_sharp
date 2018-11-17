@@ -9,6 +9,7 @@ namespace Windows_forms_plane
 {
     class Bombardir : vehicle
     {
+
         protected const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
         protected const int planeHeight = 60;

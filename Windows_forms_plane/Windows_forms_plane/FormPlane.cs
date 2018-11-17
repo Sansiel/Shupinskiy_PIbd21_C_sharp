@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,6 @@ namespace Windows_forms_plane
     public partial class FormPlane : Form
     {
         private ITransport plane;
-
 
         public FormPlane()
         {
@@ -35,7 +35,6 @@ namespace Windows_forms_plane
             plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
            pictureBoxPlanes.Height);
             Draw();
-
         }
 
 
@@ -61,7 +60,6 @@ namespace Windows_forms_plane
             Draw();
         }
 
-
         private void buttonUpgrate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -70,6 +68,6 @@ namespace Windows_forms_plane
            pictureBoxPlanes.Height);
             Draw();
         }
-
     }
 }
+
