@@ -36,16 +36,23 @@
             this.labelStealing = new System.Windows.Forms.Label();
             this.listBoxMultiParking = new System.Windows.Forms.ListBox();
             this.buttonSetPlane = new System.Windows.Forms.Button();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             this.groupBoxNavigation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxField
             // 
-            this.pictureBoxField.Location = new System.Drawing.Point(13, 13);
+            this.pictureBoxField.Location = new System.Drawing.Point(13, 27);
             this.pictureBoxField.Name = "pictureBoxField";
-            this.pictureBoxField.Size = new System.Drawing.Size(833, 457);
+            this.pictureBoxField.Size = new System.Drawing.Size(833, 443);
             this.pictureBoxField.TabIndex = 0;
             this.pictureBoxField.TabStop = false;
             // 
@@ -116,6 +123,49 @@
             this.buttonSetPlane.UseVisualStyleBackColor = true;
             this.buttonSetPlane.Click += new System.EventHandler(this.buttonSetPlane_Click);
             // 
+            // menuStrip
+            // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1043, 28);
+            this.menuStrip.TabIndex = 6;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.Save_ToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.Load_ToolStripMenuItem_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Filter = "txt file | *.txt";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            this.openFileDialog.Filter = "txt file | *.txt";
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -125,13 +175,18 @@
             this.Controls.Add(this.listBoxMultiParking);
             this.Controls.Add(this.groupBoxNavigation);
             this.Controls.Add(this.pictureBoxField);
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "FormParking";
             this.Text = "АНГАРИЩЕ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).EndInit();
             this.groupBoxNavigation.ResumeLayout(false);
             this.groupBoxNavigation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,5 +200,11 @@
         private System.Windows.Forms.Label labelStealing;
         private System.Windows.Forms.ListBox listBoxMultiParking;
         private System.Windows.Forms.Button buttonSetPlane;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

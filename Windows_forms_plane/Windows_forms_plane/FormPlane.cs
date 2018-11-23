@@ -67,5 +67,6 @@ namespace Windows_forms_plane
            pictureBoxPlanes.Height);
             Draw();
         }
+        
     }
 }
