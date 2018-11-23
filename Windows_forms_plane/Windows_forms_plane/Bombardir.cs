@@ -7,35 +7,23 @@ using System.Threading.Tasks;
 
 namespace Windows_forms_plane
 {
-    class Bombardir
+    class Bombardir : vehicle
     {
-
-
-        /// Левая координата отрисовки автомобиля
-        private float _startPosX;
-        /// Правая кооридната отрисовки автомобиля
-        private float _startPosY;
-        /// Ширина окна отрисовки
-        private int _pictureWidth;
-        //Высота окна отрисовки
-        private int _pictureHeight;
-        /// Ширина отрисовки автомобиля
         protected const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
         protected const int planeHeight = 60;
         /// Максимальная скорость
-        public int MaxSpeed { private set; get; }
-        /// Вес автомобиля
-        public float Weight { private set; get; }
-        /// Основной цвет кузова
-        public Color MainColor { private set; get; }
+
         /// Дополнительный цвет
         public Color DopColor { private set; get; }
         /// Признак наличия переднего спойлера
         public bool BOMBA { private set; get; }
         /// Признак наличия боковых спойлеров
         public bool ARMOUR { private set; get; }
-        public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool bomba, bool armour)
+
+        public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
+       bomba, bool armour)
+
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -44,23 +32,26 @@ namespace Windows_forms_plane
             BOMBA = bomba;
             ARMOUR = armour;
         }
+
+        public Bombardir(int maxSpeed, float weight, Color mainColor)
+        {
+            MaxSpeed = maxSpeed;
+            Weight = weight;
+            MainColor = mainColor;
+        }
+
+
         /// Установка позиции автомобиля
         /// <param name="x">Координата X</param>
         /// <param name="y">Координата Y</param>
         /// <param name="width">Ширина картинки</param>
         /// <param name="height">Высота картинки</param>
-        public void SetPosition(int x, int y, int width, int height)
-        {
-            _startPosX = x;
-            _startPosY = y;
-            _pictureWidth = width;
-            _pictureHeight = height;
-        }
+
         /// <summary>
         /// Изменение направления пермещения
         /// </summary>
         /// <param name="direction">Направление</param>
-        public void MoveTransport(Direction direction)
+        public override void MoveTransport(Direction direction)
         {
             float step = MaxSpeed * 100 / Weight;
             switch (direction)
@@ -81,7 +72,7 @@ namespace Windows_forms_plane
                     break;
                 //вверх
                 case Direction.Up:
-                    if (_startPosY - step > 0)
+                    if (_startPosY - step > 0 + planeHeight)
                     {
                         _startPosY -= step;
                     }
@@ -97,7 +88,8 @@ namespace Windows_forms_plane
             }
         }
         /// <param name="g"></param>
-        public void DrawPlane(Graphics g)
+        public override void DrawPlane(Graphics g)
+
         {
             Brush br = new SolidBrush(MainColor);
 
@@ -109,3 +101,4 @@ namespace Windows_forms_plane
         }
     }
 }
+
