@@ -44,6 +44,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             this.groupBoxNavigation.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             this.buttonSteal.Location = new System.Drawing.Point(20, 57);
             this.buttonSteal.Name = "buttonSteal";
+
             this.buttonSteal.Size = new System.Drawing.Size(132, 25);
             this.buttonSteal.TabIndex = 2;
             this.buttonSteal.Text = "Угнать";

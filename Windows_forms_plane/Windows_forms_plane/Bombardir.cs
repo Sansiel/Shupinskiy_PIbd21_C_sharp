@@ -9,9 +9,6 @@ namespace Windows_forms_plane
 {
     class Bombardir : vehicle
     {
-
-
-
         protected const int planeWidth = 100;
         /// Ширина отрисовки автомобиля
         protected const int planeHeight = 60;
@@ -25,6 +22,7 @@ namespace Windows_forms_plane
         public bool ARMOUR { private set; get; }
         public Bombardir(int maxSpeed, float weight, Color mainColor, Color dopColor, bool
        bomba, bool armour)
+
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -52,6 +50,7 @@ namespace Windows_forms_plane
                 ARMOUR = Convert.ToBoolean(strs[5]);
             }
         }
+
         /// Установка позиции автомобиля
         /// <param name="x">Координата X</param>
         /// <param name="y">Координата Y</param>
@@ -95,7 +94,7 @@ namespace Windows_forms_plane
                         _startPosY += step;
                     }
                     break;
-                    //Диагонально вниз и направо
+
             }
         }
         /// <param name="g"></param>
@@ -112,5 +111,4 @@ namespace Windows_forms_plane
         public override string ToString() { return MaxSpeed + ";" + Weight + ";" + MainColor.Name + ";" + DopColor.Name + ";" + BOMBA + ";" + ARMOUR; }
     }
 }
-
 
