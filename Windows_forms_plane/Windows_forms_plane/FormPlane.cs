@@ -62,7 +62,7 @@ namespace Windows_forms_plane
         private void buttonUpgrate_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            plane = new fighter(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true, true, true);
+            plane = new fighter(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Blue, Color.Red, true);
             plane.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoxPlanes.Width,
            pictureBoxPlanes.Height);
             Draw();

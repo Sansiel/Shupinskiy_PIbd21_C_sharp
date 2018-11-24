@@ -19,7 +19,7 @@ namespace Windows_forms_plane
 
         /// Дополнительный цвет
         public Color DopColor { private set; get; }
-        /// Признак наличия переднего спойлера
+       /* /// Признак наличия переднего спойлера
         public bool BOMBA { private set; get; }
         /// Признак наличия боковых спойлеров
         public bool ARMOUR { private set; get; }
@@ -33,7 +33,7 @@ namespace Windows_forms_plane
             BOMBA = bomba;
             ARMOUR = armour;
         }
-
+        */
         public Bombardir(int maxSpeed, float weight, Color mainColor)
         {
             MaxSpeed = maxSpeed;
@@ -42,14 +42,11 @@ namespace Windows_forms_plane
         }
         public Bombardir (string info) {
             string[] strs = info.Split(';');
-            if (strs.Length == 6)
+            if (strs.Length == 3)
             {
                 MaxSpeed = Convert.ToInt32(strs[0]);
                 Weight = Convert.ToInt32(strs[1]);
                 MainColor = Color.FromName(strs[2]);
-                DopColor = Color.FromName(strs[3]);
-                BOMBA = Convert.ToBoolean(strs[4]);
-                ARMOUR = Convert.ToBoolean(strs[5]);
             }
         }
         /// Установка позиции автомобиля
@@ -109,7 +106,7 @@ namespace Windows_forms_plane
 
 
         }
-        public override string ToString() { return MaxSpeed + ";" + Weight + ";" + MainColor.Name + ";" + DopColor.Name + ";" + BOMBA + ";" + ARMOUR; }
+        public override string ToString() { return MaxSpeed + ";" + Weight + ";" + MainColor.Name; }
     }
 }
 
