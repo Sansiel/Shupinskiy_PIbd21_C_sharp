@@ -19,6 +19,18 @@ namespace Windows_forms_plane
             ShoutGun = shoutgun;
 
         }
+        public fighter(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 5)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                ShoutGun = Convert.ToBoolean(strs[4]);
+            }
+        }
 
         public override void DrawPlane(Graphics g)
         {
@@ -41,6 +53,10 @@ namespace Windows_forms_plane
         public void SetDopColor(Color color)
         {
             DopColor = color;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + DopColor + ";" + ShoutGun;
         }
     }
 }
