@@ -37,6 +37,7 @@ namespace Windows_forms_plane
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
+
         }
         public Bombardir (string info) {
             string[] strs = info.Split(';');
@@ -47,6 +48,7 @@ namespace Windows_forms_plane
                 MainColor = Color.FromName(strs[2]);
             }
         }
+
 
         /// Установка позиции автомобиля
         /// <param name="x">Координата X</param>
