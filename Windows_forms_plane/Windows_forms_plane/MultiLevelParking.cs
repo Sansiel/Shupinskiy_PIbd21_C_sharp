@@ -116,7 +116,7 @@ namespace Windows_forms_plane
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename)) {
-                return false;
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
@@ -144,8 +144,8 @@ namespace Windows_forms_plane
             }
             else
             {
-                //если нет такой записи, то это не те данные    
-                return false;
+                //если нет такой записи, то это не те данные
+                throw new Exception("Неверный формат файла");
             }
             int counter = -1;
             ITransport plane = null;

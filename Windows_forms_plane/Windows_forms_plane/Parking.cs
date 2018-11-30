@@ -71,7 +71,7 @@ namespace Windows_forms_plane
                 p._places.Remove(index);
                 return plane;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Windows_forms_plane
             Pen pen = new Pen(Color.Black, 3);
             //границы праковки
             g.DrawRectangle(pen, 0, 0,(_maxCount / 5) * _placeSizeWidth, 480);
-            for (int i = 0; i < _maxCount / 5-3; i++)
+            for (int i = 0; i < _maxCount / 5; i++)
             {//отрисовываем, по 5 мест на линии
                 for (int j = 0; j < 6; ++j)
                 {//линия рамзетки места
@@ -127,7 +127,7 @@ namespace Windows_forms_plane
                 {
                     return _places[ind];
                 }
-                return null;
+                throw new ParkingNotFoundException(ind);
             }
             set
             {
@@ -135,6 +135,10 @@ namespace Windows_forms_plane
                 {
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 * _placeSizeHeight + 25, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }
