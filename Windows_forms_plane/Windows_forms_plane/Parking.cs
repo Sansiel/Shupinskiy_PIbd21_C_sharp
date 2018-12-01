@@ -40,9 +40,9 @@ namespace Windows_forms_plane
         /// <returns></returns>
         public static int operator +(Parking<T> p, T plane)
         {
-            if (p._places.Count == p._maxCount)
+            if (p._places.Count == p._maxCount-5)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {

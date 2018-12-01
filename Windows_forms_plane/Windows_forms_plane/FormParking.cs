@@ -62,6 +62,7 @@ namespace Windows_forms_plane
                            pictureBoxParking.Height);
                             pictureBoxParking.Image = bmp;
                         }
+                        logger.Info("Изъят поезд " + plane.ToString() + " с места " + maskedTextBoxPlace.Text);
                         Draw();
                     }
                     catch(ParkingNotFoundException ex)

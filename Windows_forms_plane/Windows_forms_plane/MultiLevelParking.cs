@@ -74,9 +74,9 @@ namespace Windows_forms_plane
                         WriteToFile("Level" + Environment.NewLine, fs);
                         for (int i = 0; i < countPlaces; i++)
                         {
-                            var plane = level[i];
-                            if (plane != null)
+                            try
                             {
+                                var plane = level[i];
                                 //если место не пустое   
                                 //Записываем тип мшаины      
                                 if (plane.GetType().Name == "Bombardir")
@@ -90,6 +90,11 @@ namespace Windows_forms_plane
                                 //Записываемые параметры              
                                 WriteToFile(plane + Environment.NewLine, fs);
                             }
+                            catch (ParkingNotFoundException e)
+                            {
+                                continue;
+                            }
+                            finally { }
                         }
                     }
                 }
