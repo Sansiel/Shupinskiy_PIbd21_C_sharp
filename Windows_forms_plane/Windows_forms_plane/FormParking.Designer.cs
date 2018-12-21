@@ -42,9 +42,9 @@
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.Sort_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxField)).BeginInit();
             this.groupBoxNavigation.SuspendLayout();
-
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,6 @@
             // 
             this.buttonSteal.Location = new System.Drawing.Point(20, 57);
             this.buttonSteal.Name = "buttonSteal";
-
             this.buttonSteal.Size = new System.Drawing.Size(132, 25);
             this.buttonSteal.TabIndex = 2;
             this.buttonSteal.Text = "Угнать";
@@ -148,14 +147,14 @@
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.Save_ToolStripMenuItem_Click);
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.Load_ToolStripMenuItem_Click);
             // 
@@ -168,11 +167,22 @@
             this.openFileDialog.FileName = "openFileDialog";
             this.openFileDialog.Filter = "txt file | *.txt";
             // 
+            // Sort_button
+            // 
+            this.Sort_button.Location = new System.Drawing.Point(884, 187);
+            this.Sort_button.Name = "Sort_button";
+            this.Sort_button.Size = new System.Drawing.Size(108, 65);
+            this.Sort_button.TabIndex = 7;
+            this.Sort_button.Text = "Сортировать";
+            this.Sort_button.UseVisualStyleBackColor = true;
+            this.Sort_button.Click += new System.EventHandler(this.Sort_button_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1043, 482);
+            this.Controls.Add(this.Sort_button);
             this.Controls.Add(this.buttonSetPlane);
             this.Controls.Add(this.listBoxMultiParking);
             this.Controls.Add(this.groupBoxNavigation);
@@ -208,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button Sort_button;
     }
 }
