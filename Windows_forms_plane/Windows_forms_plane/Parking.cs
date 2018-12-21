@@ -53,7 +53,7 @@ namespace Windows_forms_plane
                 if (p.CheckFreePlace(i))
                 {
                     p._places.Add(i, plane);
-                    p._places[i].SetPosition(5 + i / 5 * p._placeSizeWidth + 5, i % 5 * p._placeSizeHeight + 15, p.PictureWidth, p.PictureHeight);
+                    p._places[i].SetPosition(5 + i / 5 * p._placeSizeWidth + 5, i % 5 * p._placeSizeHeight + 25, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
                 else if (plane.GetType() == p._places[i].GetType())
