@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -175,7 +176,10 @@ namespace Windows_forms_plane
             }
             return true;
         }
-        public void Sort() { parkingStages.Sort(); }
+
+        public void Sort() {
+            parkingStages.Sort();
+        }
 
     }
 }
