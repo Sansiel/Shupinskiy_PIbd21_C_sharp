@@ -14,8 +14,9 @@ namespace Windows_forms_plane
     {
         
         MultiLevelParking parking;
-       
+        FormPlaneConfig form;
         private const int countLevel = 5;
+
         public FormParking()
         {
             InitializeComponent();
@@ -39,55 +40,6 @@ namespace Windows_forms_plane
                 pictureBoxField.Image = bmp;
             }
         }
-
-
-
-        private void buttonCreateBombardir_Click(object sender, EventArgs e)
-        {
-            if (listBoxMultiParking.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var plane = new Bombardir(100, 1000, dialog.Color);
-                    int place = parking[listBoxMultiParking.SelectedIndex] + plane;
-                    if (place == -1)
-                    {
-                        MessageBox.Show("Нет свободных мест", "Ошибка",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    Draw();
-                }
-            }
-
-        }
-
-        private void buttonCreateFighter_Click(object sender, EventArgs e)
-=======
-        {
-            if (listBoxMultiParking.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var plane = new fighter(100, 1000, dialog.Color, dialogDop.Color,
-                       true, true, true);
-                        int place = parking[listBoxMultiParking.SelectedIndex] + plane;
-                        if (place == -1)
-                        {
-                            MessageBox.Show("Нет свободных мест", "Ошибка",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        Draw();
-                    }
-                }
-            }
-
-        }
-
         private void buttonSteal_Click(object sender, EventArgs e)
         {
             if (listBoxMultiParking.SelectedIndex > -1)
@@ -118,7 +70,59 @@ namespace Windows_forms_plane
         {
             Draw();
         }
-        
+
+        private void buttonSetPlane_Click(object sender, EventArgs e)
+        {
+            form = new FormPlaneConfig();
+            form.AddEvent(AddPlane);
+            form.Show();
+        }
+        private void AddPlane(ITransport plane)
+        {
+            if (plane != null && listBoxMultiParking.SelectedIndex > -1)
+            {
+                int place = parking[listBoxMultiParking.SelectedIndex] + plane;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
+        }
+
+        private void Save_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.SaveData(saveFileDialog.FileName))
+                {
+                    MessageBox.Show("Сохранение прошло успешно", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не сохранилось", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void Load_ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (parking.LoadData(openFileDialog.FileName))
+                {
+                    MessageBox.Show("Загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Не загрузили", "Результат", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                Draw();
+            }
+        }
     }
 }
 

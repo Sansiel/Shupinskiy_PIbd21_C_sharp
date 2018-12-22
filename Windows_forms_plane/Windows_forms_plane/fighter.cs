@@ -19,13 +19,25 @@ namespace Windows_forms_plane
             ShoutGun = shoutgun;
 
         }
+        public fighter(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 5)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                ShoutGun = Convert.ToBoolean(strs[4]);
+            }
+        }
 
         public override void DrawPlane(Graphics g)
         {
 
             Brush bru = new SolidBrush(DopColor);
             g.FillEllipse(bru, _startPosX + 20, _startPosY + 5, 10, 20);
-            g.FillEllipse(bru, _startPosX + 50, _startPosY - 27, 10, 80);
+            g.FillEllipse(bru, _startPosX + 50, _startPosY - 20, 10, 70);
             g.FillEllipse(bru, _startPosX + 10, _startPosY + 10, 70, 10);
 
             if (ShoutGun)
@@ -37,7 +49,14 @@ namespace Windows_forms_plane
             }
 
             base.DrawPlane(g);
-
+        }
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + DopColor + ";" + ShoutGun;
         }
     }
 }

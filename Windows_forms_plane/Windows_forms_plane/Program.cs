@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace Windows_forms_plane
 {
-    class Program
+    public delegate void planeDelegate(ITransport plane);
+    static class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
