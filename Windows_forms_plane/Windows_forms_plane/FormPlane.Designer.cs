@@ -140,7 +140,7 @@
     private System.Windows.Forms.Button buttonRight;
     private System.Windows.Forms.Button buttonUp;
     private System.Windows.Forms.Button buttonDown;
-        private System.Windows.Forms.Button buttonUpgrate;
+    private System.Windows.Forms.Button buttonUpgrate;
     }
 
 }

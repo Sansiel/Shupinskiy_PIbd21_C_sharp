@@ -13,7 +13,7 @@ namespace Windows_forms_plane
         public Color DopColor { private set; get; }
         public bool ShoutGun { private set; get; }
 
-        public fighter(int maxSpeed, float weight, Color mainColor, Color dopColor, bool shoutgun, bool bomba, bool armour) : base(maxSpeed, weight, mainColor)
+        public fighter(int maxSpeed, float weight, Color mainColor, Color dopColor, bool shoutgun) : base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
             ShoutGun = shoutgun;
@@ -29,6 +29,7 @@ namespace Windows_forms_plane
                 MainColor = Color.FromName(strs[2]);
                 DopColor = Color.FromName(strs[3]);
                 ShoutGun = Convert.ToBoolean(strs[4]);
+
             }
         }
 
@@ -56,7 +57,7 @@ namespace Windows_forms_plane
         }
         public override string ToString()
         {
-            return base.ToString() + ";" + DopColor.Name + ";" + DopColor + ";" + ShoutGun;
+            return base.ToString() + ";" + DopColor.Name + ";" + ShoutGun;
         }
     }
 }

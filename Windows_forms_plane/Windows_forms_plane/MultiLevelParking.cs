@@ -147,7 +147,9 @@ namespace Windows_forms_plane
                 //если нет такой записи, то это не те данные    
                 return false;
             }
-            int counter = -1; ITransport plane = null; for (int i = 1; i < strs.Length; ++i)
+            int counter = -1;
+            ITransport plane = null;
+            for (int i = 1; i < strs.Length; ++i)
             {
                 //идем по считанным записям                 
                 if (strs[i] == "Level")

@@ -134,7 +134,7 @@ namespace Windows_forms_plane
                 if (CheckFreePlace(ind))
                 {
                     _places.Add(ind, value);
-                    _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 * _placeSizeHeight + 15, PictureWidth, PictureHeight);
+                    _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 5, ind % 5 * _placeSizeHeight + 25, PictureWidth, PictureHeight);
                 }
             }
         }

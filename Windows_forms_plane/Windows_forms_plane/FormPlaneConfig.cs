@@ -86,7 +86,7 @@ namespace Windows_forms_plane
                     plane = new Bombardir(100, 500, Color.White);
                     break;
                 case "Fighter":
-                    plane = new fighter(100, 500, Color.White, Color.Black, true, true, true);
+                    plane = new fighter(100, 500, Color.White, Color.Black, true);
                     break;
             }
            DrawPlane();
