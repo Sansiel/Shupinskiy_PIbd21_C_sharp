@@ -143,6 +143,5 @@
     private System.Windows.Forms.Button buttonUpgrate;
     }
 
-
 }
 
