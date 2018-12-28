@@ -74,9 +74,9 @@ namespace Windows_forms_plane
                         WriteToFile("Level" + Environment.NewLine, fs);
                         for (int i = 0; i < countPlaces; i++)
                         {
-                            var plane = level[i];
-                            if (plane != null)
+                            try
                             {
+                                var plane = level[i];
                                 //если место не пустое   
                                 //Записываем тип мшаины      
                                 if (plane.GetType().Name == "Bombardir")
@@ -90,6 +90,11 @@ namespace Windows_forms_plane
                                 //Записываемые параметры              
                                 WriteToFile(plane + Environment.NewLine, fs);
                             }
+                            catch (ParkingNotFoundException e)
+                            {
+                                continue;
+                            }
+                            finally { }
                         }
                     }
                 }
@@ -116,7 +121,7 @@ namespace Windows_forms_plane
         public bool LoadData(string filename)
         {
             if (!File.Exists(filename)) {
-                return false;
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
@@ -144,8 +149,8 @@ namespace Windows_forms_plane
             }
             else
             {
-                //если нет такой записи, то это не те данные    
-                return false;
+                //если нет такой записи, то это не те данные
+                throw new Exception("Неверный формат файла");
             }
             int counter = -1;
             ITransport plane = null;
