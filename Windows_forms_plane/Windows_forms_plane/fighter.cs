@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Windows_forms_plane
 {
-    class fighter : Bombardir
+    class fighter : Bombardir, IComparable<Bombardir>, IEquatable<Bombardir>
     {
         public Color DopColor { private set; get; }
         public bool ShoutGun { private set; get; }
@@ -59,5 +59,50 @@ namespace Windows_forms_plane
         {
             return base.ToString() + ";" + DopColor.Name + ";" + ShoutGun;
         }
+        public int CompareTo(fighter other)
+        {
+            var res = (this is Bombardir).CompareTo(other is Bombardir);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+
+            return 0;
+        }
+        public bool Equals(fighter other)
+        {
+            var res = (this as Bombardir).Equals(other as Bombardir);
+            if (!res)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            fighter planeObj = obj as fighter;
+            if (planeObj == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(planeObj);
+            }
+        }
+        public override int GetHashCode() { return base.GetHashCode(); }
+
     }
 }

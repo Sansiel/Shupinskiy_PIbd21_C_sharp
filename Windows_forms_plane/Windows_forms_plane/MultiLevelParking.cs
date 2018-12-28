@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -74,9 +75,8 @@ namespace Windows_forms_plane
                         WriteToFile("Level" + Environment.NewLine, fs);
                         for (int i = 0; i < countPlaces; i++)
                         {
-                            try
+                            foreach (var plane in level)
                             {
-                                var plane = level[i];
                                 //если место не пустое   
                                 //Записываем тип мшаины      
                                 if (plane.GetType().Name == "Bombardir")
@@ -90,11 +90,6 @@ namespace Windows_forms_plane
                                 //Записываемые параметры              
                                 WriteToFile(plane + Environment.NewLine, fs);
                             }
-                            catch (ParkingNotFoundException e)
-                            {
-                                continue;
-                            }
-                            finally { }
                         }
                     }
                 }
@@ -180,6 +175,10 @@ namespace Windows_forms_plane
                 parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = plane;
             }
             return true;
+        }
+
+        public void Sort() {
+            parkingStages.Sort();
         }
 
     }
